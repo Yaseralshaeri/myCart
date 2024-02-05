@@ -29,7 +29,13 @@
         } 
     });
     
-    
+        /*------------------
+        Background Set
+    --------------------*/
+    $('.set-bg').each(function () {
+        var bg = $(this).data('setbg');
+        $(this).css('background-image', 'url(' + bg + ')');
+    });
    // Back to top button
    $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
@@ -76,12 +82,10 @@
             }
         }
     });
-
-
     //  carousel
     $(".product-carousel").owlCarousel({
         autoplay: true,
-        smartSpeed: 1500,
+        smartSpeed: 2000,
         center: false,
         dots: true,
         loop: true,
@@ -176,21 +180,63 @@
         }
     });
 
+    function showAddTOCart(){
+        $('.add-to-element').addClass('w-75');
+        $('.add-to-container').removeClass('center');
+        $('.add-to-container').addClass('show-center');
+        $('.add-to-text').removeClass('d-none');
+        $('.add-to-text').addClass('add-to-visible'); 
+    }
+
+    function hideAddTOCart(){
+
+
+        $('.add-to-element').removeClass('w-75');
+        $('.add-to-container').removeClass('show-center');
+        $('.add-to-container').addClass('center');
+        $('.add-to-text').removeClass('add-to-visible');
+        $('.add-to-text').addClass('d-none'); 
+    }
+
+    function showQuickView(){
+         
+        $('.quick-view-element').addClass('w-75');
+        $('.quick-view-container').removeClass('center');
+        $('.quick-view-container').addClass('show-center');
+        $('.quick-view-text').removeClass('d-none');
+        $('.quick-view-text').addClass('add-to-visible');
+    }
+    function hideQuickView(){
+
+        $('.quick-view-element').removeClass('w-75');
+        $('.quick-view-container').removeClass('show-center');
+        $('.quick-view-container').addClass('center');
+        $('.quick-view-text').removeClass('add-to-visible');
+        $('.quick-view-text').addClass('d-none');
+       
+    }
     // Modal Video
     $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
+        $('.add-to-element').on('mouseover', function (e) {
 
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+            hideQuickView();
+            showAddTOCart()
+            
         })
 
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
+
+        $('.quick-view-element').on('mouseover', function (e) {
+           
+         hideAddTOCart(); 
+         showQuickView();
+            
         })
+        $('.quick-view-btn').on('mouseover', function (e) {
+            $('.quick-view-text').removeClass('d-none');
+            $('.quick-view-text').addClass('add-to-visible');
+            $('.quick-view-btn').addClass('w-75');
+        })
+        
     });
 
 
