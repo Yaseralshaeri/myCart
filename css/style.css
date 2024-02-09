@@ -930,6 +930,10 @@ font-size: .8rem;
     .fruite .fruite-item .product-desc{
         font-size:0.9rem;
      }
+     .fruite-item .fruite-img .try-icon{
+        width: 70%;
+        
+    }
     .brands-carousel .owl-nav .owl-prev {
         position: absolute;
         top: -20px;
