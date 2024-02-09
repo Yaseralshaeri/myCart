@@ -217,25 +217,8 @@
     }
     // Modal Video
     $(document).ready(function () {
-        $('.add-to-element').on('mouseover', function (e) {
+      
 
-            hideQuickView();
-            showAddTOCart()
-            
-        })
-
-
-        $('.quick-view-element').on('mouseover', function (e) {
-           
-         hideAddTOCart(); 
-         showQuickView();
-            
-        })
-        $('.quick-view-btn').on('mouseover', function (e) {
-            $('.quick-view-text').removeClass('d-none');
-            $('.quick-view-text').addClass('add-to-visible');
-            $('.quick-view-btn').addClass('w-75');
-        })
         
     });
 

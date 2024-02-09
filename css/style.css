@@ -1,4 +1,10 @@
 
+.rtl{
+    direction: rtl;
+}
+.ltr{
+    direction:ltr;
+}
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
@@ -74,11 +80,10 @@
 .btn.border-dark:hover {
     background: var(--bs-dark) !important;
     color: var(--bs-white) !important;
-    
+   
 }
 .btn-search,
-.fa-search:hover,
-.fa-eye:hover
+.fa-search:hover
 {
     color: var(--bs-dark) !important;
 
@@ -165,7 +170,10 @@
         opacity: 0;
     }
 }
+.dropdown .dropdown-menu{
+    text-align:right;
 
+}
 .dropdown .dropdown-menu a:hover {
     background: var(--bs-secondary);
     color: var(--bs-white);
@@ -306,12 +314,33 @@
     transition: 0.5s;
     border-radius: 10px 10px 0 0;
 }
+.fruite .fruite-item .product-name{
+font-weight: 600;
+font-size: 1rem;
+}
+
+
 .fruite-img {
     overflow: hidden;
     transition: 0.5s;
-    border-radius: 10px 10px 0 0;
-   
-    
+    border-radius: 10px 10px 0 0;  
+}
+.fruite-item .fruite-img .try-icon{
+    bottom:-30%;
+    left:50%;
+    width: 60%;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    -o-transform:translateX(-50%);
+    -ms-transform:translateX(-50%);
+    transform:translateX(-50%);
+    transition:all 450ms ease;
+    opacity: 0.9;
+}
+
+.fruite-item:hover .fruite-img .try-icon{
+    bottom:5%;
+
 }
 .fruite .fruite-item .fruite-img img {
     transition: 0.5s;
@@ -328,9 +357,13 @@
 
 
 /**** carousel ***/
+.owl-carousel {
+    direction: ltr;
+}
 .product-carousel .fruite-item{
     height: 100%;
     transition: 0.5s;
+    direction: rtl;
 }
 .fruite .owl-stage {
     margin: 50px 0;
@@ -452,10 +485,27 @@
 .brands a:hover {
     color:var(--bs-secondary) ;
 }
+.recomnded-item .fa-eye:hover{
+    color: var(--bs-white) !important;
+}
+
+.recomnded-item .try-icon{
+    top:  0px !important;
+    left: 0px !important;
+    border-radius: inherit !important;;
+    border-top-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-left: none !important;
+ border-top: none !important;
+}
+
 /*** Banner Section End ***/
 
 /*** Banner Section Start ***/
-.banner .banner-btn:hover {
+ .banner-btn {
+    color:var(--bs-white) ;
+}
+.banner-btn:hover {
     background: var(--bs-white);
     color:var(--bs-secondary) ;
 }
@@ -550,6 +600,9 @@
 .testimonial .owl-nav .owl-next:hover {
     background: var(--bs-secondary);
     color: var(--bs-white);
+}
+.testimonial-item{
+direction: rtl;
 }
 /*** testimonial End ***/
 .bg-bg{
@@ -668,7 +721,6 @@
     font-family: 'Dancing Script', cursive;
     font-size: 24px;
     color: #ffffff;
-
     margin: 0;
   }
   
@@ -719,37 +771,77 @@
     font-family: 'Dancing Script', cursive;
 
 }
-.center {
+.center{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .show-center {
-    margin-left: 10%;
-    padding: 10px;
-    
+  .quick-view-element .center .quick-view-text{
+    display:none;
+    font-family: 'Dancing Script', cursive; 
+
+ }
+  .quick-view-element:hover{
+    width: 70%;
+    transition:all 400ms ease;
   }
+  .quick-view-element:hover .center{
+     position: relative;
+    margin-right:11%;
+    margin-left:4%;
+    text-align:center;
+    padding:10px 10px 2px;
+    display: flex;
+    justify-content:space-between;
+    transition:all 600ms ease;
+
+  }
+  .quick-view-element:hover .center .quick-view-text{
+    display:inline;
+    font-family: 'Dancing Script', cursive; 
+ }
+
+
+ .add-to-element .center .add-to-text{
+    display:none;
+    font-family: 'Dancing Script', cursive; 
+
+ }
+  .add-to-element:hover{
+    width: 75%;
+    transition:all 400ms ease;
+
+  }
+  .add-to-element:hover .center{
+     position: relative;
+    margin-right:11%;
+    margin-left:4%;
+    text-align:center;
+    padding:10px 10px 2px;
+    display: flex;
+    justify-content:space-between;
+    transition:all 600ms ease;
+  }
+  .add-to-element:hover .center .add-to-text{
+    display:inline;
+    font-family: 'Dancing Script', cursive; 
+ }
 .circle-h-w{
   width: 45px;
   height: 45px;
 }
-.btn-h-w{
-    height: 45px;
-    width: 75%;
-    }
-.add-to-visible{
-    margin-left: 2px;
-    display:inline;
-    font-family: 'Dancing Script', cursive;  
-}
+
     
 
 .product-body{
     
 }
 
-
+.custom-btn-sz{
+line-height: 2rem;
+font-size: .8rem;
+}
   /* =================================================================
    responsive positioning */
    @media only screen and (min-width: 1200px){
@@ -811,11 +903,33 @@
     }
 
 }
+@media only screen and (max-width: 400px) {
+    .fruite .fruite-item .product-desc{
+        font-size:0.9rem;
+     }
+     .fruite .fruite-item .product-name{
+        font-weight: 600;
+        font-size: .8rem;
+        }
+     .pd-ssm-tap{
+        margin:0.5 .25rem !important;
+    
+
+    } 
+    .pd-ssm-tap span{
+        padding-left:  0.75rem !important;
+        padding-right:  0.75rem !important
+
+    }   
+}
 @media only screen and (max-width: 768px) {
     .product-label{
       top: 5px;
       left:5px;
     }
+    .fruite .fruite-item .product-desc{
+        font-size:0.9rem;
+     }
     .brands-carousel .owl-nav .owl-prev {
         position: absolute;
         top: -20px;
